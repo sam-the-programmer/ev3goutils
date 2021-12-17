@@ -75,19 +75,20 @@ func (m *MotorSet) runDegrees(motor *ev3dev.TachoMotor, degrees int, speed int) 
 }
 
 func (m *MotorSet) ADegrees(degrees int, speed int) {
+	m.checkMotor("a")
 	m.runDegrees(&m.A, degrees, speed)
 }
 func (m *MotorSet) BDegrees(degrees int, speed int) {
+	m.checkMotor("b")
 	m.runDegrees(&m.B, degrees, speed)
 }
 func (m *MotorSet) CDegrees(degrees int, speed int) {
+	m.checkMotor("c")
 	m.runDegrees(&m.C, degrees, speed)
 }
 func (m *MotorSet) DDegrees(degrees int, speed int) {
+	m.checkMotor("d")
 	m.runDegrees(&m.D, degrees, speed)
 }
 
-func NewMotorSet(ports []string) MotorSet {
-	m := MotorSet{}
-	return m
-}
+func NewMotorSet() MotorSet { return *new(MotorSet) }
