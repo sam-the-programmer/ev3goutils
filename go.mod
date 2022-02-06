@@ -1,4 +1,4 @@
-module github.com/password-classified/ev3goutils
+module github.com/sam-the-programmer/ev3goutils
 
 go 1.17
 
